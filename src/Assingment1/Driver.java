@@ -1,6 +1,6 @@
 package Assingment1;
 import java.util.ArrayList;
-public class Driver
+public class Driver implements Observer
 {
     ArrayList<String> FavAreas = new ArrayList<>();
     ArrayList<Ride> DriverHistory = new ArrayList();
@@ -10,21 +10,28 @@ public class Driver
     {
         return FavAreas;
     }
-    public boolean locationisfav(String userlocation)
+    public void locationisfav(String userlocation)
     {
 
         for(String i : FavAreas)
         {
             if(i.contentEquals(userlocation)) {
-                return true;
+                System.out.println("hey Driver i am sfosfdosdfjsofisjfsofskfnsfo");
+                display();
+
             }
+
         }
-        return false;
+
+    }
+
+    public void display(){
+        System.out.println("what's up my nigga");
     }
 
     public void addfavarea(String newfavarea)
     {
-        System.out.println(newfavarea);
+
         FavAreas.add(newfavarea);
     }
 
