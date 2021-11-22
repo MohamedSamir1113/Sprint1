@@ -27,21 +27,23 @@ public class WebApp<choice> {
                         customermanger m1= new customermanger();
                         m1.requestRide(location,distination);
                         System.out.println("enter your favorite areas");
-
                         Driver d1= new Driver();
-
                         for(int i=0; i<3;i++)
                         {
                             String fav = scan.next();
-
                             d1.addfavarea(fav);
 
                         }
+                        Ride r1 = new Ride();
                         if(d1.locationisfav(location))
                         {
-                            System.out.println("Driver wake up");
-                        }
+                            System.out.println("............................");
 
+                            d1.AddIntredRide(r1,location);
+                        }
+                        d1.DisplayInstresed();
+                        r1.notifyDriver();
+                        System.out.println("Driver wake up");
                     }
                     break;
                 }
@@ -85,7 +87,6 @@ public class WebApp<choice> {
                             break;
                         }
                     }
-
                     break;
                 }
             }
