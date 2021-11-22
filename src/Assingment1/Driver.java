@@ -18,8 +18,6 @@ public class Driver implements Observer
         for(String i : FavAreas)
         {
             if(i.contentEquals(userlocation)) {
-                System.out.println("hey Driver i am sfosfdosdfjsofisjfsofskfnsfo");
-                display();
                 return true;
             }
         }
@@ -30,30 +28,26 @@ public class Driver implements Observer
         {
             if(i.contentEquals(Userlocation))
             {
-                
-                System.out.println(r1);
-
                 IntrestedRides.add(r1);
 
             }
         }
     }
-    public void DisplayInstresed()
+    public void DisplayIntredRides()
     {
-        for(Ride x : IntrestedRides) {
-            System.out.println(x);
+        for(Ride i : IntrestedRides)
+        {
+            System.out.println(i.getSourceArea()+" "+i.getDestination());
         }
-    }
-
-    public void display(){
-        System.out.println("what's up my nigga");
     }
 
     public void addfavarea(String newfavarea)
     {
-
         FavAreas.add(newfavarea);
     }
+
+
+
 
 
 }

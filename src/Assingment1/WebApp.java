@@ -18,7 +18,7 @@ public class WebApp<choice> {
                     inputUsername = scan.next();
                     System.out.println("Enter password");
                     inputPassword = scan.next();
-                    if(true);//obj.s1.login(inputUsername, inputPassword)
+                    if(obj.s1.login(inputUsername, inputPassword));
                     {
                         System.out.println("enter your location");
                         String location = scan.next();
@@ -34,16 +34,14 @@ public class WebApp<choice> {
                             d1.addfavarea(fav);
 
                         }
-                        Ride r1 = new Ride();
+                        Ride r1 = new Ride(location, distination);
                         if(d1.locationisfav(location))
                         {
-                            System.out.println("............................");
-
                             d1.AddIntredRide(r1,location);
                         }
-                        d1.DisplayInstresed();
                         r1.notifyDriver();
-                        System.out.println("Driver wake up");
+                        System.out.println("Hey driver hear is a list of intrested rides ");
+                        d1.DisplayIntredRides();
                     }
                     break;
                 }

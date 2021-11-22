@@ -5,6 +5,7 @@ public class Ride extends Driver
     String SourceArea;
     String Destination;
     Driver d1 = new Driver();
+    double Offer;
     public Ride()
     {
 
@@ -19,8 +20,16 @@ public class Ride extends Driver
     public void notifyDriver()
     {
         d1.locationisfav(SourceArea);
-        System.out.println("hey Driver i am notifier");
-
     }
+    public String getSourceArea()
+    {
+        return SourceArea;
+    }
+    public String getDestination()
+    {
+        return Destination;
+    }
+
+
 }
 
