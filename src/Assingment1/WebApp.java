@@ -18,7 +18,7 @@ public class WebApp<choice> {
                     inputUsername = scan.next();
                     System.out.println("Enter password");
                     inputPassword = scan.next();
-                    if(true);//obj.s1.login(inputUsername, inputPassword)
+                    if(obj.s1.login(inputUsername, inputPassword));
                     {
                         System.out.println("enter your location");
                         String location = scan.next();
@@ -27,21 +27,21 @@ public class WebApp<choice> {
                         customermanger m1= new customermanger();
                         m1.requestRide(location,distination);
                         System.out.println("enter your favorite areas");
-
                         Driver d1= new Driver();
-
                         for(int i=0; i<3;i++)
                         {
                             String fav = scan.next();
-
                             d1.addfavarea(fav);
 
                         }
+                        Ride r1 = new Ride(location, distination);
                         if(d1.locationisfav(location))
                         {
-                            System.out.println("Driver wake up");
+                            d1.AddIntredRide(r1,location);
                         }
-
+                        r1.notifyDriver();
+                        System.out.println("Hey driver hear is a list of intrested rides ");
+                        d1.DisplayIntredRides();
                     }
                     break;
                 }
@@ -76,7 +76,8 @@ public class WebApp<choice> {
                             System.out.println("Enter national Id ");
                             Licence = scan.next();
                             AdminUser adminUser = new AdminUser();
-                            if (adminUser.verfiyDriver(Licence, nationalID)) {
+                            Driver d1 = new Driver(nationalID, Licence);
+                            if (adminUser.verifyRegistration(d1)) {
                                 UserAccount Account = new UserAccount(inputUsername, inputPassword, inputEmail, inputMobileNumber);
                                 obj.s1.register(Account);
                             } else {
@@ -85,7 +86,6 @@ public class WebApp<choice> {
                             break;
                         }
                     }
-
                     break;
                 }
             }
