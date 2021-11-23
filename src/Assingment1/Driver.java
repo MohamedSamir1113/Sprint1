@@ -2,22 +2,11 @@ package Assingment1;
 import java.util.ArrayList;
 public class Driver implements Observer
 {
-    boolean isVerified;
     ArrayList<String> FavAreas = new ArrayList<>();
     ArrayList<Ride> DriverHistory = new ArrayList();
     ArrayList<Ride> IntrestedRides = new ArrayList<>();
-    String nationalID;
-    String driverLicense;
+
     //Ride[] historyofrides;
-    public Driver(){
-
-    }
-    public Driver(String Id, String Dl)
-    {
-        nationalID=Id;
-        driverLicense=Dl;
-
-    }
 
     public ArrayList<String> ListFavAreasRides()
     {
@@ -57,20 +46,8 @@ public class Driver implements Observer
         FavAreas.add(newfavarea);
     }
 
-    public void setVerified(boolean verified) {
-        isVerified = verified;
-    }
 
-    public boolean isVerified() {
-        return isVerified;
-    }
 
-    public String getNationalID() {
-        return nationalID;
-    }
 
-    public String getDriverLicense() {
-        return driverLicense;
-    }
 
 }
