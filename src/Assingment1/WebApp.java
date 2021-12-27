@@ -35,11 +35,12 @@ public class WebApp<choice> {
 
                         }
                         Ride r1 = new Ride(location, distination);
+                        FavAreasclass Fav1= new FavAreasclass(location);
                         if(d1.locationisfav(location))
                         {
                             d1.AddIntredRide(r1,location);
                         }
-                        r1.notifyDriver();
+                        Fav1.notifyDriver();
                         System.out.println("Hey driver hear is a list of intrested rides ");
                         d1.DisplayIntredRides();
                     }
@@ -76,7 +77,8 @@ public class WebApp<choice> {
                             System.out.println("Enter national Id ");
                             Licence = scan.next();
                             AdminUser adminUser = new AdminUser();
-                            if (adminUser.verfiyDriver(Licence, nationalID)) {
+                            Driver d1 = new Driver(nationalID, Licence);
+                            if (adminUser.verifyRegistration(d1)) {
                                 UserAccount Account = new UserAccount(inputUsername, inputPassword, inputEmail, inputMobileNumber);
                                 obj.s1.register(Account);
                             } else {
